@@ -1,3 +1,5 @@
+{% extends "pizza/base.html" %}
+{% block tresc %}
 <h1>Lista pizz</h1>
 
 <table class="table">
@@ -11,8 +13,10 @@
         {% if p.autor.username == user.username %}
             <a href="{% url 'pizza:edytuj' p.id %}">Edytuj</a> &bull;
             <a href="{% url 'pizza:usun' p.id %}">Usuń</a>
+            <a href="{% url 'pizza:info' p.id %}">info</a>
         {% endif %}
     </td>
 </tr>
 {% endfor %}
 </table>
+{% endblock %}

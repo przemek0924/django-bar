@@ -1,3 +1,5 @@
+{% extends "pizza/base.html" %}
+{% block tresc %}
 <h1>Logowanie</h1>
   <form method="post" action=".">
     {% csrf_token %}
@@ -9,3 +11,4 @@
   Nie masz konta?<br>
   <a href="{% url 'registration_register' %}">Utwórz konto!</a>
 </p>
+{% endblock %}

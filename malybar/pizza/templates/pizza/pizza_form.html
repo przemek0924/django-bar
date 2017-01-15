@@ -1,3 +1,5 @@
+{% extends "pizza/base.html" %}
+{% block tresc %}
 <h1>Dodaj pizzę</h1>
 
 <form action="." method="post" id="pform">
@@ -19,3 +21,4 @@
     <br /><input type="submit" value="Zapisz">
 </form>
 <h1>{{imie}}</h1>
+{% endblock %}

@@ -1,3 +1,6 @@
+{% extends "pizza/base.html" %}
+{% block tresc %}
+
 <h1>Usuwanie pizzy</h1>
 <form action="." method="post">
   {% csrf_token %}
@@ -9,3 +12,4 @@
     </ol>
   <button type="submit">Usuń</button>
 </form>
+{% endblock %}

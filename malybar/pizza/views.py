@@ -6,6 +6,7 @@ from . import models
 from . import forms
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView, DeleteView
+from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -110,6 +111,16 @@ class PizzaDelete(DeleteView):
 
     def get_context_data(self, **kwargs):
         context = super(PizzaDelete, self).get_context_data(**kwargs)
+        skladniki = models.Skladnik.objects.filter(pizza=self.object)
+        context['skladniki'] = skladniki
+        return context
+
+@method_decorator(login_required, 'dispatch')
+class PizzaDetail(DetailView):
+    model = models.Pizza
+
+    def get_context_data(self, **kwargs):
+        context = super(PizzaDetail, self).get_context_data(**kwargs)
         skladniki = models.Skladnik.objects.filter(pizza=self.object)
         context['skladniki'] = skladniki
         return context

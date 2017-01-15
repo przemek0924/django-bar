@@ -1,4 +1,11 @@
-<h1>Mały Bar</h1>
+{% extends "pizza/base.html" %}
+{% block tytul_head %}
+Aplikacja Mały Bar
+{% endblock %}
+{% block tytul_h1 %}Mały Bar{% endblock %}
+
+{% block tresc %}
+
 <p>{{ komunikat }}</p>
 <a href ='kontakt'>kontakt</a>
 <ul>
@@ -13,3 +20,5 @@
 
   {% endif %}
 </ul>
+
+{% endblock %}
