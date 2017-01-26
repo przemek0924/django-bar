@@ -11,7 +11,7 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-#test2
+#test3
 
 def index(request):
     """Strona główna"""
